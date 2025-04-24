@@ -6,13 +6,13 @@
 #    By: lenygarcia <marvin@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/06 20:35:06 by lenygarcia        #+#    #+#              #
-#    Updated: 2025/03/15 20:22:46 by lenygarcia       ###   ########.fr        #
+#    Updated: 2025/04/24 19:56:00 by lenygarcia       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC              = cc -g
 CFLAGS          = -Wall -Wextra -Werror -Ilibft/includes -Iincludes
-SRCS            = $(wildcard srcs/*.c)
+SRCS            = srcs/ft_printf.c srcs/ft_putchari.c srcs/ft_putnbrhexmaj.c srcs/ft_putnbrhexmin.c srcs/ft_putnbri.c srcs/ft_putnbrui.c srcs/ft_putptr.c srcs/ft_putstri.c
 OBJS            = $(SRCS:.c=.o)
 NAME            = libftprintf.a
 LIBFT_PATH      = ./libft
@@ -29,7 +29,6 @@ $(NAME): $(LIBFT) $(OBJS)
 	@cp $(OBJS) $(TEMP_DIR)
 	@cd $(TEMP_DIR) && ar rcs ../$(NAME) *.o
 	@rm -rf $(TEMP_DIR)
-	@echo "$(NAME) is ready"
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_PATH) all
