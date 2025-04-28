@@ -6,7 +6,7 @@
 /*   By: lenygarcia <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 19:35:09 by lenygarcia        #+#    #+#             */
-/*   Updated: 2025/03/15 20:03:29 by lenygarcia       ###   ########.fr       */
+/*   Updated: 2025/03/10 22:20:56 by lenygarcia       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,9 @@ int		ft_lstsize(t_list *lst);
 
 void	ft_bzero(void *s, size_t n);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
 void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
 void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);

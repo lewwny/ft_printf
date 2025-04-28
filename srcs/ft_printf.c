@@ -6,7 +6,7 @@
 /*   By: lenygarcia <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 19:57:11 by lenygarcia        #+#    #+#             */
-/*   Updated: 2025/03/16 13:39:17 by lenygarcia       ###   ########.fr       */
+/*   Updated: 2025/04/28 08:15:36 by lengarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_process(char conv, va_list *args)
 	return (count);
 }
 
-static int	vprintf_loop(const char *format, va_list args)
+static int	vprintf_loop(const char *format, va_list *args)
 {
 	unsigned int	count;
 	unsigned int	tmp;
@@ -49,7 +49,7 @@ static int	vprintf_loop(const char *format, va_list args)
 		if (*format == '%')
 		{
 			format++;
-			tmp = ft_process(*format, &args);
+			tmp = ft_process(*format, args);
 		}
 		else
 			tmp = ft_putchari(*format);
@@ -67,7 +67,7 @@ int	ft_printf(const char *format, ...)
 	int		ret;
 
 	va_start(args, format);
-	ret = vprintf_loop(format, args);
+	ret = vprintf_loop(format, &args);
 	va_end(args);
 	return (ret);
 }
